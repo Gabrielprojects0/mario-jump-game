@@ -18,6 +18,10 @@ document.addEventListener('keydown', () => {
     }
 });
 
+document.addEventListener('touchstart', function() {
+    jump();
+});
+
 function jump() {
     isJumping = true;
     mario.classList.add('jump');
