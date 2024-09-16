@@ -1,2 +1,2 @@
 # mario-jump-game
- Meu primeiro jogo web! baseado no jogo do dinossauro do google
+Fiz mais para ver como que o javascript funciona

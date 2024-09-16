@@ -1,0 +1,159 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #8B4513; /* Cor marrom para o fundo abaixo da grama */
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(cyan, white); /* Céu azul em cima e branco embaixo */
+}
+
+.pipe {
+    position: absolute;
+    bottom: 50px; /* Altura do cano acima da grama */
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+    z-index: 10;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 50px; /* Altura do Mario acima da grama */
+    z-index: 20;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    animation: clouds-animation 20s infinite linear;
+    z-index: 5;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #228B22; /* Cor de fundo verde da grama */
+    border-top: 15px solid green; /* Borda para simular a transição com a grama */
+    z-index: 0;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 50px; /* Altura inicial do Mario */
+    }
+    40% {
+        bottom: 230px;
+    }
+    50% {
+        bottom: 230px;
+    }
+    60% {
+        bottom: 230px;
+    }
+    100% {
+        bottom: 50px; /* Altura final do Mario */
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes die {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.mario.die {
+    animation: die 1s ease-out forwards;
+    width: 150px; /* Ajuste a largura conforme necessário */
+    height: 150px; /* Ajuste a altura conforme necessário */
+    background: url('/src/imagens/game-over.png') no-repeat center center;
+    background-size: contain; /* Ajusta o tamanho da imagem para não ficar comprimida */
+    background-color: transparent; /* Remove qualquer cor de fundo para evitar o nome da imagem */
+    z-index: 20; /* Assegure-se de que o Mario esteja acima de outros elementos */
+}
+
+.score-board {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    color: white;
+    z-index: 15;
+}
+
+.game-over {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 25;
+}
+
+.game-over h1 {
+    margin: 0;
+}
+
+.game-over p {
+    font-size: 1.2em;
+}
+
+.game-over button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #32CD32;
+    color: white;
+}
