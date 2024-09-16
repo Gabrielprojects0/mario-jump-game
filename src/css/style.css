@@ -110,7 +110,7 @@ body {
     animation: die 1s ease-out forwards;
     width: 150px; /* Ajuste a largura conforme necessário */
     height: 150px; /* Ajuste a altura conforme necessário */
-    background: url('/src/imagens/game-over.png') no-repeat center center;
+    background: url('./src/imagens/game-over.png') no-repeat center center;
     background-size: contain; /* Ajusta o tamanho da imagem para não ficar comprimida */
     background-color: transparent; /* Remove qualquer cor de fundo para evitar o nome da imagem */
     z-index: 20; /* Assegure-se de que o Mario esteja acima de outros elementos */
