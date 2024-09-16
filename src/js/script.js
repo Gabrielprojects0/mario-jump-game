@@ -10,6 +10,7 @@ let score = 0;
 let isJumping = false;
 let isGameOver = false;
 let pipeAnimationInterval;
+let velocidadeCano = 5;
 
 // Adiciona o evento de teclado
 document.addEventListener('keydown', () => {
@@ -21,6 +22,20 @@ document.addEventListener('keydown', () => {
 document.addEventListener('touchstart', function() {
     jump();
 });
+
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+  // Se for um dispositivo móvel, aumente a velocidade do cano
+if (isMobile()) {
+    velocidadeCano = 8; // Aumente este valor conforme necessário
+}
+  // Sua lógica que move o cano deve usar a variável 'velocidadeCano'
+function moverCano() {
+    // Lógica para mover o cano
+    cano.posicaoX -= velocidadeCano;
+}
 
 function jump() {
     isJumping = true;
