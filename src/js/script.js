@@ -48,7 +48,7 @@ function gameOver() {
     mario.classList.add('die'); // Adiciona a animação de morte
 
     // Altera a imagem do Mario para a de morte
-    mario.src = 'src/imagens/mario-die.png'; // Verifique se o caminho está correto
+    mario.src = 'src/imagens/game-over.png'; // Verifique se o caminho está correto
 
     // Para a animação dos tubos
     document.querySelectorAll('.pipe').forEach(pipe => {
