@@ -23,7 +23,7 @@ body {
     position: absolute;
     bottom: 50px; /* Altura do cano acima da grama */
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: pipe-animation infinite linear;
     z-index: 10;
 }
 
